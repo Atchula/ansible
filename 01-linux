@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Playbook Is beginning"
+ansible -i inv.ini -e ansible_user=ec2-user -e ansible_password=Test1234@ ping.yaml
+echo "Playbook Is Closed"
