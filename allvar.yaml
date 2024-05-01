@@ -19,7 +19,7 @@
         msg: "{{var}}"
     - name: Inv Level
       ansible.builtin.debug:
-        msg: "{{var}}"
+        msg: "{{var1}}"
     - name: Args Level
       ansible.builtin.debug:
         msg: "{{args1}}"
