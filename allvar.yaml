@@ -11,8 +11,8 @@
     
   tasks :
    - name : "Printing"
-     vars :
-      WISH: "TASK LEVEL"
+    #  vars :
+    #   WISH: "TASK LEVEL"
      ansible.builtin.debug:
       msg : "{{WISH}}"
  
