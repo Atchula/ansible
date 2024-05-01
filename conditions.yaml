@@ -4,7 +4,7 @@
    - name : "Checking User Exit Or Not"
      ansible.builtin.command: id TestUser
      register: USER
-     #ignore_errors: true
+     ignore_errors: true
     
    - name : "Print Test Message"
      ansible.builtin.debug:
