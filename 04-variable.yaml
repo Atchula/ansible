@@ -1,15 +1,19 @@
-- name : Prompt Variables
+- name : "Student Details"
   hosts : localhost
-  vars_prompt:
-   - name : USERNAME
-     prompt: "Please Enter Username"
-     private: false
-  
-   - name : PASSWORD
-     prompt : "Please Enter Password"
-     private : true
+  vars_prompt :
+    - name : STUNAME
+      prompt : "Please Enter The Student Name :"
+      private : false
+
+    - name : STUCLASS
+      prompt : "Please Enter Student Class :"
+      private : false
+
+    - name : STUPERCENTAGE
+      prompt : "Please Enter Student Percentage :"
+      private : false
 
   tasks :
-    - name : Print Info
+    - name : "Printing Student Details : "
       ansible.builtin.debug:
-        msg : "Info Is {{USERNAME}}  {{PASSWORD}}"
+       msg : "Student Details Are {{STUNAME}} {{STUCLASS}} {{STUPERCENTAGE}}"
