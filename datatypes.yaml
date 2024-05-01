@@ -6,6 +6,10 @@
     AWS : 2
     DEVOPS : 1
    realproject : true
+   test :
+    - name : "HELLO"
+    - name : "HI"
+    - name : "test"
   tasks :
    - name : "Print Courses"
      ansible.builtin.debug:
