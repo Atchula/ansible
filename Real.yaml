@@ -2,7 +2,7 @@
   hosts : localhost
   tasks  :
     - name : "Checking mysql-server Is Installed"
-      ansible.builtin.command : dnf list installed | grep mysql-server | cut -d '.' -f1
+      ansible.builtin.command : "dnf list installed | grep mysql-server | cut -d '.' -f1"
       register: mysqlstatus
 
     - name : "Print Status"
