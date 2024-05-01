@@ -7,4 +7,5 @@
 
     - name : "Print Status"
       ansible.builtin.debug :
-       msg : "{{mysqlstatus}}"
+       msg : "done"
+      when : "'mysql-server' in mysqlstatus.stdout_lines"
