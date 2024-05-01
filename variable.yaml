@@ -1,0 +1,9 @@
+- name : Variables
+  hosts : demo
+  vars : 
+     name : "HELLO HANUMAIAH"
+     message : "WELCOME TO WORLD"
+  tasks :
+   - name : printing variables
+     ansible.builtin.debug:
+       msg : {{name}},{{message}}"
