@@ -1,7 +1,7 @@
 - name : "Prefernece Check"
   hosts: demo
-  vars : 
-   WISH: "PLAY LEVEL"
+  # vars : 
+  #  WISH: "PLAY LEVEL"
   vars_files:
    - file1.yaml
   # vars_prompt:
