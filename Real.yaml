@@ -13,4 +13,4 @@
   - name : "Checking mysql-server Not Installed"
      ansible.builtin.debug:
        msg : "Mysql-server Is Installed"
-     when : 'mysql_server' not in facts.packages
+    when : 'mysql_server' not in facts.packages
