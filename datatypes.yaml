@@ -13,7 +13,7 @@
   tasks :
    - name : "Print Courses"
      ansible.builtin.debug:
-       msg : "The {{course}}-{{tools}}-{{realproject}}"
+       msg : "The {{course}}-{{tools}}-{{realproject}}-{{test}}"
     
  
 
