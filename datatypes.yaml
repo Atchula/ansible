@@ -1,0 +1,16 @@
+- name : "Data Types"
+  hosts : localhost
+  vars :
+   course : "Devops With AWS"
+   tools :
+    AWS : 2
+    DEVOPS : 1
+   realproject : true
+  tasks :
+   - name : "Print Courses"
+     ansible.builtin.debug:
+       msg : "The {{course}}-{{tools}}-{{realproject}}"
+    
+ 
+
+   
