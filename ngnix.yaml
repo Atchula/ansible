@@ -1,0 +1,15 @@
+- name : Install nginx and Start Service
+  hosts: demo
+  tasks: 
+   - name : Install nginx
+     ansible.built.dnf:
+      name:  nginx
+      state: latest
+   
+   - name: Checking Package Installed or Not
+     package_facts:
+      manager: auto
+   - name: Check whether a package called Nginx is installed
+     ansible.builtin.debug:
+      msg: "Nginx Installed"
+     when: "'nginx' in ansible_facts.packages" 
