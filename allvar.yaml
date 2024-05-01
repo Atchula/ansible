@@ -4,10 +4,10 @@
    WISH: "PLAY LEVEL"
   vars_files:
    - file1.yaml
-  vars_prompt:
-    - name : WISH
-      prompt: "PLEASE ENETER"
-      private : false
+  # vars_prompt:
+  #   - name : WISH
+  #     prompt: "PLEASE ENETER"
+  #     private : false
     
   tasks :
    - name : "Printing"
