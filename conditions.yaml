@@ -1,5 +1,6 @@
 - name : "Conditions Check"
   hosts : localhost
+  become : yes
   tasks :
    - name : "Checking User Exit Or Not"
      ansible.builtin.command: id TestUser
