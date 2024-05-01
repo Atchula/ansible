@@ -5,7 +5,7 @@
   vars_files:
    - file1.yaml
   vars_prompt:
-   - name : WISH
+     name : WISH
      promt: "PLEASE ENETER"
      private : false
     
