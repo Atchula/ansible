@@ -13,10 +13,10 @@
    - name : "Checking mysql-server Not Installed"
      ansible.builtin.debug:
        msg : "Mysql-server Is Not Installed"
-     when : "'mysql_server' not in facts"
-     
+     when : "'mysql-server' not in facts"
+
    - name : "Checking mysql-server Not Installed"
      ansible.builtin.dnf:
         name : "mysql-server"
         state : "installed"
-     when : "'mysql_server' not in facts"
+     when : "'mysql-server' not in facts"
