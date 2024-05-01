@@ -1,0 +1,10 @@
+- name : "Conditions Check"
+  hosts : localhost
+  tasks :
+   - name : "Checking User Exit Or Not"
+     ansible.builtin.command: id TestUser
+    
+   - name : "Print Test Message"
+     ansible.builtin.debug:
+       msg: "Tested.."
+      
