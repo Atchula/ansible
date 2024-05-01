@@ -1,25 +1,18 @@
----
-- name: All Variables
-  hosts: localhost
-  vars:
-    play: Play Level Variable
+- name : "Prefernece Check"
+  hosts: demo
+  vars : 
+   WISH: "PLAY LEVEL"
   vars_files:
-    - file1.yaml
-  tasks:
-    - name: Task Level
-      vars:
-        play: Task Level Variable
-      ansible.builtin.debug:
-        msg: "{{play}}"
-    - name: Play Level
-      ansible.builtin.debug:
-        msg: "{{play}}"
-    - name: File Level
-      ansible.builtin.debug:
-        msg: "{{var}}"
-    - name: Inv Level
-      ansible.builtin.debug:
-        msg: "{{var1}}"
-    - name: Args Level
-      ansible.builtin.debug:
-        msg: "{{args1}}"
+   - file1.yaml
+  vars_prompt:
+   - name : WISH
+     promt: "PLEASE ENETER"
+     private : false
+    
+  tasks :
+   - name : "Printing"
+     vars :
+      WISH: "TASK LEVEL"
+     ansible.builtin.debug:
+      msg : "{{WISH}}"
+ 
