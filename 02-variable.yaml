@@ -1,0 +1,15 @@
+- name : "Checking Variable scope at Task Level And Play Level"
+  hosts : localhost
+  vars :
+    course : "Play Level"
+  tasks :
+    - name : "First Task"
+      ansible.builtin.debug :
+        msg : "Course At {{course}}"
+
+    - name : "Second Task"
+      vars :
+        course : "Task Level"
+      ansible.builtin.debug:
+        msg : "Course At {{course}}"
+    
