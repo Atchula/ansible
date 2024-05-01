@@ -10,6 +10,16 @@
        msg : "User Exists"
      when : USER.rc != 1
 
+    - name : "User Doesn't Exists"
+      ansible.builtin.debug:
+        msg : "USER DOESNOT EXISTS"
+      when: USER.rc != 0
+    
+    - name : "Creating User"
+      ansible.builtin.command: useradd TestUser
+      when : USER.rc != 0
+      
+
    - name : "Print Test Message"
      ansible.builtin.debug:
        msg: "User Info : {{USER}}"
