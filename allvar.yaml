@@ -1,28 +1,25 @@
- - name : "All Variables"
-   hosts: localhost
-   vars :
-    play: "Play Level Variable"
-   vars_files :
-     - file1.yaml
-   tasks :
-     - name : "Task Level"
-       vars : 
-         play : "Task Level Variable"
-        ansible.builtin.debug:
-         msg : "{{play}}"
-     - name : "Play Level"
-       ansible.builtin.debug :
-         msg : "{{play}}"
-
-     - name : "File Level"
-        ansible.builtin.debug:
-          msg : "{{var}}"
-
-     - name : "Inv Level"
-        ansible.builtin.debug:
-          msg : "{{var}}"
-     - name : "Args Level"
-        ansible.builtin.debug:
-          msg : "{{args1}}"
-    
-     
+---
+- name: All Variables
+  hosts: localhost
+  vars:
+    play: Play Level Variable
+  vars_files:
+    - file1.yaml
+  tasks:
+    - name: Task Level
+      vars:
+        play: Task Level Variable
+      ansible.builtin.debug:
+        msg: "{{play}}"
+    - name: Play Level
+      ansible.builtin.debug:
+        msg: "{{play}}"
+    - name: File Level
+      ansible.builtin.debug:
+        msg: "{{var}}"
+    - name: Inv Level
+      ansible.builtin.debug:
+        msg: "{{var}}"
+    - name: Args Level
+      ansible.builtin.debug:
+        msg: "{{args1}}"
