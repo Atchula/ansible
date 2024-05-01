@@ -1,22 +1,10 @@
-- name : "Make DB Configuration"
+- name : "Configuring DB"
   hosts : localhost
-  tasks :
-   - name : "Gather Package Details"
-     ansible.builtin.package_facts:
-     register : facts
+  tasks  :
+    - name : "Checking mysql-server Is Installed"
+      ansible.builtin.command : dnf installed list | grep mysql-server
+      register: mysqlstatus
 
-   - name : "Checking mysql-server Installed"
-     ansible.builtin.debug:
-       msg : "Already Mysql-server Installed"
-     when : "'mysql' in facts"
-     
-   - name : "Checking mysql-server Not Installed"
-     ansible.builtin.debug:
-       msg : "Mysql-server Is Not Installed"
-     when : "'mysql' not in facts[0:5]"
-
-   - name : "Checking mysql-server Not Installed"
-     ansible.builtin.dnf:
-        name : "mysql-server"
-        state : "installed"
-     when : "'mysql' not in facts[0:5]"
+    - name : "Print Status"
+      ansible.builtin.debug :
+       msg : "{{mysqlstatus}}"
