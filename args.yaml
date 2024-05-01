@@ -3,4 +3,4 @@
   tasks :
     - name : "Printing Arg Variables"
       ansible.builtin.debug:
-         msg : "The Args Are {{arg1} {{arg2}}"
+         msg : "The Args Are {{arg1}} {{arg2}}"
