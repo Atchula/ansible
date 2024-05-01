@@ -1,0 +1,6 @@
+- name : "Printing Variables From Inventory"
+  hosts : demo
+  tasks: 
+    - name : Printing Variables
+      ansible.builtin.debug:
+        msg : "Varaiabe Is {{test}}"
