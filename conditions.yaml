@@ -3,9 +3,10 @@
   tasks :
    - name : "Checking User Exit Or Not"
      ansible.builtin.command: id TestUser
-     ignore_errors: true
+      register: USER
+     #ignore_errors: true
     
    - name : "Print Test Message"
      ansible.builtin.debug:
-       msg: "Tested.."
+       msg: "User Info : {{USER}}"
       
