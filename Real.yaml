@@ -7,10 +7,10 @@
 
    - name : "Checking mysql-server Installed"
      ansible.builtin.debug:
-       msg : "{{facts}}"
-  #    when : "'mysql_server' in facts.packages"
+       msg : "Already Mysql-server Installed"
+     when : "'mysql_server' in facts"
      
-  #  - name : "Checking mysql-server Not Installed"
-  #    ansible.builtin.debug:
-  #      msg : "Mysql-server Is Installed"
-  #    when : "'mysql_server' not in facts.packages"
+   - name : "Checking mysql-server Not Installed"
+     ansible.builtin.debug:
+       msg : "Mysql-server Is Installed"
+     when : "'mysql_server' not in facts"
