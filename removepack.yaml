@@ -1,0 +1,11 @@
+- name : "Removing Packages"
+  hosts : demo
+  tasks :
+   - name : "Removing Packages"
+     ansible.builtin.dnf :
+      name : "{{item}}""
+      state : removed
+     loop :
+      - nginx
+      - postfix
+      - mysql-server
