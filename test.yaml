@@ -1,4 +1,4 @@
-- name "Testing Command OR Shell module"
+- name : "Testing Command OR Shell module"
   hosts : localhost
   tasks :
    - name : "Command Module"
