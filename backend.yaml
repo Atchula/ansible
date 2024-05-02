@@ -10,7 +10,7 @@
       
       - name : "Install nodejs"
         ansible.builtin.dnf :
-         name : "{{item}}""
+         name : "{{item}}"
          state : installed
         loop :
          - nodejs
