@@ -1,6 +1,10 @@
 - name : "DB Configuration"
   hosts : DB
   become : yes
+  vars_prompt :
+   - name : RootPass
+     prompt : "Please Enter Root Password"
+     private : no
   tasks :
    - name : "Installing MySql Server"
      ansible.builtin.dnf :
@@ -22,13 +26,17 @@
    - name : "Check DB Connection"
      community.mysql.mysql_info:
          login_user: root
-         login_password: ExpenseApp@1
+         login_password: "{{RootPass}}"
          filter: version
      ignore_errors : yes
      register : sqlconn
 
-   - name : Print Connection
-     ansible.builtin.debug:
-      msg : "{{sqlconn}}"
+  #  - name : Print Connection
+  #    ansible.builtin.debug:
+  #     msg : "{{sqlconn}}"
+
+   - name : "Set Root Password"
+      ansible.builtin.command : mysql_secure_installation --set-root-pass "{{RootPass}}"
+       
       
       
