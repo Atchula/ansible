@@ -1,0 +1,15 @@
+- name : "Dictionary To List"
+  hosts : localhost
+  vars :
+    dict :
+      name : "JAVA"
+      price : "300$"
+      trainer : "Hanu"
+  tasks :
+    - name : "Before Convert"
+      ansible.builtin.debug :
+       msg : "Before Convert {{dict}}"
+
+    - name : "After Convert"
+      ansible.builtin.debug :
+       msg : "After Convert {{dict | dict2list }}"
