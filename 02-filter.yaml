@@ -1,0 +1,6 @@
+- name : "Default Values"
+  hosts : localhost
+  tasks :
+    - name : "Printing Default Values"
+      ansible.builtin.debug :
+        msg : "The Default Value {{course | default('Java')}} "
