@@ -31,12 +31,9 @@
      ignore_errors : yes
      register : sqlconn
 
-  #  - name : Print Connection
-  #    ansible.builtin.debug:
-  #     msg : "{{sqlconn}}"
-
    - name : "Set Root Password"
       ansible.builtin.command : "mysql_secure_installation --set-root-pass {{RootPass}}"
+     when : sqlconn.failed is True
        
       
       
