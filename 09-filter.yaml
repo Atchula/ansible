@@ -5,7 +5,7 @@
   tasks :
    - name : "Print Fruits"
      ansible.builtin.debug:
-      msg :" The Fruits Are {{item}}"
+      msg : " The Fruits Are {{item}}"
      loop :
       - MANGO
       - ORANGE
