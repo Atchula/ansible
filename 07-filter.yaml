@@ -2,10 +2,10 @@
   hosts : localhost
   vars :
     mylist : 
-      - name : "MANGO"
-        price : "400$"
-      - name : "APPLE"
-        price : "500$"
+      - key : "MANGO"
+        value : "400$"
+      - key : "APPLE"
+        value : "500$"
   tasks :
     - name : Print Dict
       ansible.builtin.debug:
