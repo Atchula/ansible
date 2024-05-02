@@ -1,0 +1,8 @@
+- name : "Remove Duplicates"
+  hosts : localhost
+  vars :
+   number : [1,1,4,4,6,7,6]
+  tasks :
+   - name : "Printing Unique Number"
+     ansible.builtin.debug :
+       msg : "Unique Number Is {{number | unique}}"
