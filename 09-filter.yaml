@@ -7,4 +7,4 @@
      ansible.builtin.debug:
       msg : " The Fruits Are {{item}}"
      loop :
-       {{list}}
+      - {{list}}
