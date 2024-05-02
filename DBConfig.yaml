@@ -32,4 +32,4 @@
       register: sqlconn
     - name: Set Root Password
       ansible.builtin.command: mysql_secure_installation --set-root-pass {{RootPass}}
-      when: sqlconn.changed is false
+      when: sqlconn.failed is true
