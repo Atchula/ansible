@@ -9,4 +9,4 @@
   tasks :
     - name : Print Dict
       ansible.builtin.debug:
-       msg : "Before Convert {{mylist}},After Convert {{mylist | list2dict}}"
+       msg : "Before Convert {{mylist}},After Convert {{mylist | items2dict}}"
