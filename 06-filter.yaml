@@ -12,4 +12,4 @@
 
     - name : "After Convert"
       ansible.builtin.debug :
-       msg : "After Convert {{dict | dict2list }}"
+       msg : "After Convert {{dict | dict2items }}"
