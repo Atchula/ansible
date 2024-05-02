@@ -28,7 +28,7 @@
      register : sqlconn
 
    - name : Print Connection
-     ansible.builtin.debug
+     ansible.builtin.debug:
       msg : "{{sqlconn}}"
       
       
