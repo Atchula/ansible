@@ -3,8 +3,8 @@
   tasks :
    - name : "Removing Packages"
      ansible.builtin.dnf :
-      name : "{{item}}""
-      state : removed
+      name : "{{item}}"
+      state : "removed"
      loop :
       - nginx
       - postfix
