@@ -2,11 +2,11 @@
   hosts : localhost
   tasks :
    - name : "Command Module"
-     ansible.builtin.command : "dnf list installed | grep mysql-server"
+     ansible.builtin.command : "dnf list installed | grep mysql-server > /tmp/command.txt"
      register : outputcmd
 
    - name : "Shell Module"
-     ansible.builtin.shell : "dnf list installed | grep mysql-server"
+     ansible.builtin.shell : "dnf list installed | grep mysql-server > /tmp/shell.txt"
      register : outputshell
 
    - name : Print Results
