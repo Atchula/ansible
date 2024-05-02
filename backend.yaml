@@ -10,8 +10,11 @@
       
       - name : "Install nodejs"
         ansible.builtin.dnf :
-         name : nodejs
+         name : "{{item}}""
          state : installed
+        loop :
+         - nodejs
+         - mysql
 
       - name : "Creating user for service run"
         ansible.builtin.user : 
@@ -56,6 +59,15 @@
          target : /app/schema/backend.sql
          state : import
          name : all
+
+      - name : "Reload Daemon For Systemd"
+        ansible.builtin.systemd_service
+         daemon_reload: true
+        
+      - name : "Start Backend Service"
+         ansible.builtin.systemd_service:
+           name : backend
+           state : started
 
       
      
