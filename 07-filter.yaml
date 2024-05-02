@@ -1,0 +1,12 @@
+- name : "List To Dict"
+  hosts : localhost
+  vars :
+    mylist : 
+      - name : "MANGO"
+        price : "400$"
+      - name : "APPLE"
+        price : "500$"
+  tasks :
+    - name : Print Dict
+      ansible.builtin.debug:
+       msg : "Before Convert {{mylist}},After Convert {{mylist | list2dict}}"
