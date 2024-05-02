@@ -19,7 +19,7 @@
 
       - name : "Creating seperate folder for code"
         ansible.builtin.file:
-         path: /app
+         path : /app
          state : directory
       
       - name : "Downloading Code"
@@ -28,6 +28,6 @@
           dest: /tmp/backend.zip
 
       - name : "Unzip above code into app folder"
-        ansible.builtin.archive :
+        ansible.builtin.unarchive :
          src : /tmp/backend.zip
          dest : /app
