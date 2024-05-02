@@ -1,0 +1,11 @@
+- name : "Installing Packages"
+  hosts : demo
+  tasks : 
+   - name : "Installing Packages"
+     ansible.builtin.dnf :
+       name : {{item}}
+       state : latest
+     loop :
+      - nginx
+      - postfix
+      - mysql-server
