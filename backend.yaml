@@ -49,7 +49,7 @@
       - name : "Install PyMysql To connect MySqlServer From Ansible"
         ansible.builtin.pip:
          name : PyMySQL
-         exceutable : pip3.9
+         executable : pip3.9
       
       - name : "Connect DB Serevr and Import Data"
         community.mysql.mysql_db :
