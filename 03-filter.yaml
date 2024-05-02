@@ -5,4 +5,4 @@
   tasks :
     - name : "Printing Converted Upper"
       ansible.builtin.debug:
-       msg : "Before Converted {{grreting}}, After Converted {{greeting | upper}} "
+       msg : "Before Converted {{greeting}}, After Converted {{greeting | upper}} "
