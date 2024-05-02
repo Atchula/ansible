@@ -1,11 +1,11 @@
 - name : "Installing Packages"
-  hosts : demo
-  tasks : 
-   - name : "Installing Packages"
-     ansible.builtin.dnf :
-       name : "{{item}}"
-       state : latest
+  hosts : localhost
+  tasks :
+   - name : "Installing Packages In localhost"
+     ansible.builtin.dnf:
+      name : "{{item.name}}"
+      state : "{{item.state}}"
      loop :
-      - nginx
-      - postfix
-      - mysql-server
+      - { "name":"nginx","state":"installed" } 
+      - { "name":"postfix","state":"installed" } 
+      - { "name":"mysql-server","state":"installed" } 
