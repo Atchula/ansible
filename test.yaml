@@ -1,0 +1,14 @@
+- name "Testing Command OR Shell module"
+  hosts : localhost
+  tasks :
+   - name : "Command Module"
+     ansible.builtin.command : "dnf list installed | grep mysql-server"
+     register : outputcmd
+
+   - name : "Shell Module"
+     ansible.builtin.shell : "dnf list installed | grep mysql-server"
+     register : outputshell
+
+   - name : Print Results
+     ansible.builtin.debug:
+      msg : "Command : {{outputcmd}}, Shell {{outputshell}}"
