@@ -1,0 +1,10 @@
+- name : "Loop Example"
+  hosts : localhost
+  vars :
+   list : ["MANGO","GRAPES","BANANA"]
+  tasks :
+   - name : "Print Fruits"
+     ansible.builtin.debug:
+      msg :" The Fruits Are {{item}}""
+     loop :
+      list
